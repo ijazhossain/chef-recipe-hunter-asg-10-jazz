@@ -1,0 +1,6 @@
+.recipe-background {
+    background-image: url(../../../../assets/images/onion-bg.png), url(../../../../assets/images/cabbage-bg.png);
+    background-position: 0px 30px, bottom right;
+    background-size: 300px;
+    background-repeat: no-repeat;
+}
