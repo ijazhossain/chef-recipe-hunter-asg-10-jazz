@@ -4,6 +4,10 @@ import { Card, Col, ListGroup } from 'react-bootstrap';
 import Button from '../../../Shared/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
+
+/* =============================
+    Single Recipe Details
+================================ */
 const Recipes = ({ info }) => {
     // console.log(info);
     const { cooking_methods, ingredients, ratings, recipe_name } = info;
