@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+.carousel-first-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.514)), url('../../../assets/images/slider-1.jpg');
+    min-height: 1000px;
+    background-size: cover;
+}
+
+.carousel-second-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.514)), url('../../../assets/images/slider-2.jpg');
+    min-height: 1000px;
+    background-size: cover;
+    /* background-position: 0px -80px; */
+}
+
+.carousel-container h1,
+.carousel-container h4 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #c6a87d;
+
+}
+
+.height-control {
+    height: 1000px;
+}
+
+.carousel-info {
+    font-size: 17px;
+    line-height: 30px;
+    ;
+}
+
+.book-btn {
+    height: 57px;
+    border: 1px solid #c6a87d;
+    font-size: 17px;
+}
