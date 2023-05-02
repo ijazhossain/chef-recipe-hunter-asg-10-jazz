@@ -27,11 +27,37 @@
 .carousel-info {
     font-size: 17px;
     line-height: 30px;
-    ;
+
 }
 
 .book-btn {
     height: 57px;
     border: 1px solid #c6a87d;
     font-size: 17px;
+}
+
+@media only screen and (max-width:600px) {
+    .carousel-info {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+
+    .carousel-container h1 {
+        font-size: 38px;
+        font-weight: 900 !important;
+    }
+
+    .carousel-container h4 {
+        font-size: 16px;
+        color: white;
+    }
+
+    .carousel-first-img {
+        background-position: -600px -100px;
+    }
+
+    .carousel-second-img {
+        background-position: 0px -100px;
+    }
 }

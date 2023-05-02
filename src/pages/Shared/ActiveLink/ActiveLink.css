@@ -1,0 +1,16 @@
+.active-link {
+    color: #c5a47e;
+    font-size: 18px;
+}
+
+.active-link:hover {
+    color: red;
+}
+
+.inactive {
+    font-size: 18px;
+}
+
+.inactive:hover {
+    color: red !important;
+}

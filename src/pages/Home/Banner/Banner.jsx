@@ -1,12 +1,14 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './Banner.css'
-
+/*====================
+        Banner
+ ===================== */
 const Banner = () => {
     return (
         <Carousel slide={false} interval={null} variant="light" className='carousel-container text-white'>
             <Carousel.Item className='carousel-first-img'>
-                <div className='w-75 mx-auto d-flex align-items-center justify-content-center flex-column height-control '>
+                <div className='container px-5 mx-auto d-flex align-items-center justify-content-center flex-column height-control '>
                     <h4 className='text-center fw-bolder'>Ordinary American Taste with Special Recipe
                     </h4>
                     <h1 className='text-center display-1 fw-semibold mb-4 mt-0'>Exquisite American Cuisine</h1>
@@ -15,7 +17,7 @@ const Banner = () => {
                 </div>
             </Carousel.Item>
             <Carousel.Item className='carousel-second-img '>
-                <div className='w-75 mx-auto d-flex align-items-center justify-content-center flex-column  height-control '>
+                <div className='container px-5 mx-auto d-flex align-items-center justify-content-center flex-column  height-control '>
                     <h4 className='text-center fw-bolder'>Ordinary American Taste with Special Recipe
                     </h4>
                     <h1 className='text-center display-1 fw-semibold mb-4 mt-0'>Exquisite American Cuisine</h1>
