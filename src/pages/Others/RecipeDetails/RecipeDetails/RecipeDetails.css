@@ -1,0 +1,11 @@
+.chef-information h1 {
+    color: #c5a47e;
+    font-family: 'Cormorant Garamond', serif;
+
+}
+
+.chef-information p {
+    line-height: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+}

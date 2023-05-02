@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Header from '../pages/Shared/Header/Header';
 
 const ChefRecipeLayout = () => {
     return (
         <div>
-            <h1>this is chef recipe layout</h1>
+
             <Outlet></Outlet>
         </div>
     );

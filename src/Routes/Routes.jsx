@@ -2,11 +2,11 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
 import ChefRecipeLayout from "../layout/ChefRecipeLayout";
-import ChefDetails from "../pages/ChefDetails/ChefDetails";
 import LoginLayout from "../layout/LoginLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
-import Blogs from "../pages/Others/Blogs";
+import Blogs from "../pages/Others/Blogs/Blogs";
+import RecipeDetails from "../pages/Others/RecipeDetails/RecipeDetails/RecipeDetails";
 
 const router = createBrowserRouter([
     {
@@ -45,8 +45,8 @@ const router = createBrowserRouter([
         element: <ChefRecipeLayout></ChefRecipeLayout>,
         children: [
             {
-                path: ':id',
-                element: <ChefDetails></ChefDetails>
+                path: ':chefId',
+                element: <RecipeDetails></RecipeDetails>
             }
         ]
 

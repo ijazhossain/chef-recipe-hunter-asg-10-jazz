@@ -4,13 +4,14 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.514)), url('../../../assets/images/slider-1.jpg');
     min-height: 1000px;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .carousel-second-img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.514)), url('../../../assets/images/slider-2.jpg');
     min-height: 1000px;
     background-size: cover;
-    /* background-position: 0px -80px; */
+    background-repeat: no-repeat;
 }
 
 .carousel-container h1,
