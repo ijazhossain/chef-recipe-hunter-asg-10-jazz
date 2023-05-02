@@ -1,0 +1,76 @@
+.LazyLoad {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.is-visible {
+    opacity: 1;
+}
+
+.chef-card {
+    border: 1px solid #c5a47e;
+    border-radius: 10px;
+    width: 35rem;
+}
+
+.chef-card img {
+    border-radius: 10px 0 0 10px;
+}
+
+.chef-card h2 {
+    color: #c5a47e;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.icon-container {
+    margin-top: 24px;
+}
+
+.icon-style {
+    color: #c5a47e;
+}
+
+.view-btn {
+    color: #c5a47e;
+    font-size: 18px;
+    margin-top: 24px;
+}
+
+.view-btn:hover {
+    color: white;
+    background-color: #c5a47e !important;
+}
+
+@media screen and (max-width:990px) {
+    .chef-card {
+        width: 20rem;
+        border-radius: 8px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    .chef-card img {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .view-btn {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width:991px) and (max-width:1200px) {
+    .chef-card {
+        width: 28rem;
+        border-radius: 8px;
+        margin: 0 auto;
+    }
+
+    .view-btn {
+        padding: 0px 20px !important;
+        margin-top: 20px;
+    }
+
+    .icon-container {
+        margin-top: 15px;
+    }
+}

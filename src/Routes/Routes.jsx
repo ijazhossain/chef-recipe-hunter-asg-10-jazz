@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
 import ChefRecipeLayout from "../layout/ChefRecipeLayout";
@@ -15,8 +15,25 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
+                element: <Navigate to="/home"></Navigate>
+            }
+
+        ]
+    },
+    {
+        path: '/home',
+        element: <Main></Main>,
+        children: [
+            {
+                path: '/home',
                 element: <Home></Home>
-            },
+            }
+        ]
+    },
+    {
+        path: '/blog',
+        element: <Main></Main>,
+        children: [
             {
                 path: '/blog',
                 element: <Blogs></Blogs>
