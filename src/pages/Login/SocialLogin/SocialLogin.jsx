@@ -8,7 +8,7 @@ const SocialLogin = () => {
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
     return (
-        <div className='d-flex flex-column w-75 '>
+        <div className='social-container d-flex flex-column  mx-md-auto '>
             <button className='social-btn d-flex align-items-center py-2 px-3 my-3'>
                 <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
                 <span className='social-label'>Sign in with google</span>
@@ -17,11 +17,11 @@ const SocialLogin = () => {
                 <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
                 <span className='social-label'>Sign in with facebook</span>
             </button>
-            <button className='social-btn d-flex align-items-center py-2 px-3 my-3'>
+            <button className='social-btn d-flex align-items-center py-2 px-3 mt-3 mb-4'>
                 <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
                 <span className='social-label'>Sign in with github</span>
             </button>
-            <hr />
+            <hr></hr>
 
         </div>
     );

@@ -27,4 +27,12 @@
         margin-left: 50px;
     }
 
+
+
+}
+
+@media screen and (min-width:992px) {
+    .social-container {
+        width: 80%;
+    }
 }
