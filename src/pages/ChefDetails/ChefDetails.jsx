@@ -12,7 +12,7 @@ const ChefDetails = () => {
 
     useEffect(() => {
         const loadData = async () => {
-            const loadedData = await fetch('http://localhost:5000/home')
+            const loadedData = await fetch('https://chef-recipe-hunter-server-asg-10.vercel.app/home')
             const data = await loadedData.json()
             // console.log(data);
             setChefDetails(data);
