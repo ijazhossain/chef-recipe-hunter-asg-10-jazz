@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Recipes.css'
 import { Card, Col, ListGroup } from 'react-bootstrap';
 import Button from '../../../Shared/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 /* =============================
     Single Recipe Details
 ================================ */
 const Recipes = ({ info }) => {
-    // console.log(info);
+    const [selected, setSelected] = useState(false);
     const { cooking_methods, ingredients, ratings, recipe_name } = info;
-    console.log(cooking_methods, ingredients, ratings, recipe_name);
+
+    // console.log(cooking_methods, ingredients, ratings, recipe_name);
+    const handleFavorite = () => {
+        setSelected(true)
+        toast(recipe_name + " recipe is your favorite.")
+    }
     return (
         <>
             <h2 style={{ color: '#c5a47e' }} className='text-center'>{recipe_name}</h2>
@@ -49,8 +56,10 @@ const Recipes = ({ info }) => {
                     </ListGroup>
                 </Card>
             </Col>
-            <button className='ym-btn border-0 px-5 rounded-3 fw-semibold text-white w-50 mx-auto'>Add to Favorite</button>
+            <button onClick={() => handleFavorite()}
+                disabled={selected} className='ym-btn border-0 px-5 rounded-3 fw-semibold text-white w-50 mx-auto'>Add to Favorite</button>
             <hr />
+            <ToastContainer />
         </>
     );
 };

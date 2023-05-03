@@ -1,0 +1,13 @@
+.reg-form-container {
+    background-color: #fcfaf8;
+}
+
+.submit-btn {
+    background-color: rgb(194, 160, 112);
+    border: none;
+}
+
+.submit-btn:hover {
+    background-color: black;
+    color: white;
+}

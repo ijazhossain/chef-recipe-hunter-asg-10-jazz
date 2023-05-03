@@ -12,7 +12,7 @@ const RecipeDetails = () => {
     const [loading1, setLoading1] = useState(true)
     const [recipeInfo, setRecipeInfo] = useState({})
     const { chefId } = useParams()
-    console.log(chefId)
+    // console.log(chefId)
     useEffect(() => {
         const loadData = async () => {
             const loadedData = await fetch(`https://chef-recipe-hunter-server-asg-10.vercel.app/details/${chefId}`)
