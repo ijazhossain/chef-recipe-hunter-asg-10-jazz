@@ -4,3 +4,9 @@
     background-size: 300px;
     background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 768px) {
+    .recipe-background {
+        background-position: 0px 120px, bottom right;
+    }
+}

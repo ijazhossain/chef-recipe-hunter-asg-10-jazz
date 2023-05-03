@@ -1,0 +1,10 @@
+.card-head {
+    background-color: #c5a47e;
+    color: white
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .card-style {
+        padding-top: 16px;
+    }
+}

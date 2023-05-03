@@ -11,7 +11,7 @@ const RecipeInfo = ({ recipeInfo }) => {
     return (
         <div style={{ backgroundColor: '#f4f0ea' }} className='recipe-background my-5 py-5'>
 
-            <Row className='gy-5 container mx-auto'>
+            <Row className='gy-3 gy-lg-5 container mx-auto'>
                 {
                     recipe_info.map(info => <Recipes
                         key={info.id}

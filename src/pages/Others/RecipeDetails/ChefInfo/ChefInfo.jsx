@@ -11,18 +11,18 @@ const ChefInfo = ({ recipeInfo }) => {
     const { chef_pic, chef_name, description, likes, recipe_quantity, experience
     } = recipeInfo;
     return (
-        <div className='chef-information container mx-auto my-5 py-5'>
+        <div className='chef-information container mx-auto my-5 py-5 px-3 px-lg-0'>
             <Row>
-                <Col md={6}>
-                    <h1 className=' mb-4'>{chef_name}</h1>
+                <Col lg={6}>
+                    <h1 className=' mb-4 fw-semibold'>{chef_name}</h1>
                     <p className='mb-4 text-dark text-justify'>{description}</p>
                     <p>Likes: {likes}</p>
                     <p>Recipe Quantity: {recipe_quantity}</p>
                     <p>Experiences: {experience
                     }</p>
                 </Col>
-                <Col md={6} className=''>
-                    <LazyLoad className='w-100 d-flex justify-content-center' threshold={0.95}><img className='chef-info-img  rounded-3' src={chef_pic} alt="chef photo" /></LazyLoad>
+                <Col lg={6} className=''>
+                    <LazyLoad className='w-100 d-flex justify-content-center' threshold={0.95}><img className='chef-info-img img-fluid rounded-3' src={chef_pic} alt="chef photo" /></LazyLoad>
                 </Col>
             </Row>
         </div>
