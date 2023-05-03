@@ -3,6 +3,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import img from '../../../assets/images/circle-left.png'
 import foodBg from '../../../assets/images/food-1.jpg'
 import "./Introduction.css"
+
+/* =====================================
+    Introduction HomePage Section
+======================================= */
+
 const Introduction = () => {
     return (
         <Container className='my-2 py-3 -my-lg-5 py-lg-5 '>

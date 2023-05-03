@@ -14,7 +14,7 @@ const ChefInfo = ({ recipeInfo }) => {
         <div className='chef-information container mx-auto my-5 py-5 px-3 px-lg-0'>
             <Row>
                 <Col lg={6}>
-                    <h1 className=' mb-4 fw-semibold'>{chef_name}</h1>
+                    <h1 className='heading-color mb-4 fw-semibold'>{chef_name}</h1>
                     <p className='mb-4 paragraph-color text-justify'>{description}</p>
                     <p className='paragraph-color'>Likes: {likes}</p>
                     <p className='paragraph-color'>Recipe Quantity: {recipe_quantity}</p>

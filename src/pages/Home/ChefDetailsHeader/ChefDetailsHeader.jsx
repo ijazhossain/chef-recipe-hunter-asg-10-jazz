@@ -1,9 +1,9 @@
 import React from 'react';
 import img from '../../../assets/images/circle-left.png'
-import foodBg from '../../../assets/images/food-1.jpg'
+
 const ChefDetailsHeader = () => {
     return (
-        <div className='container mb-5 pb-5'>
+        <div className='container mb-5 pb-2'>
             <div className=' mx-auto text-center'>
                 <p className='fs-5 text-center mb-4'>
                     <img className='me-2 ' src={img} alt="circle" />
