@@ -2,9 +2,11 @@ import React from 'react';
 import './RecipeInfo.css'
 import Recipes from '../Recipes/Recipes';
 import { Row } from 'react-bootstrap';
-/* =====================
-    Recipe Information
-========================= */
+
+/* ==============================
+        Recipe Information
+================================= */
+
 const RecipeInfo = ({ recipeInfo }) => {
     const { recipe_info } = recipeInfo;
     // console.log(recipe_info);

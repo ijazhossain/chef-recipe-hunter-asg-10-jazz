@@ -5,9 +5,11 @@ import SpinnerLoader from '../../../Shared/SpinnerLoader/SpinnerLoader';
 import RecipeBanner from '../RecipeBanner/RecipeBanner';
 import ChefInfo from '../ChefInfo/ChefInfo';
 import RecipeInfo from '../RecipeInfo/RecipeInfo';
+
 /* =========================
     Chef's Recipe Page 
 =============================*/
+
 const RecipeDetails = () => {
     const [loading1, setLoading1] = useState(true)
     const [recipeInfo, setRecipeInfo] = useState({})

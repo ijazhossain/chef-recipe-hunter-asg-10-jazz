@@ -55,10 +55,11 @@
     }
 
     .carousel-first-img {
-        background-position: -600px -100px;
+        background-position: center;
     }
 
     .carousel-second-img {
         background-position: 0px -100px;
+        background-position: center;
     }
 }

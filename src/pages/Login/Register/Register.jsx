@@ -5,6 +5,11 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import img from '../../../assets/images/login.jpg'
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useNavigate } from 'react-router-dom';
+
+/* ==================================
+        Registration Page
+===================================== */
+
 const Register = () => {
     const navigate = useNavigate();
     const emailRef = useRef('')

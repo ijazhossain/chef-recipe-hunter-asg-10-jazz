@@ -3,9 +3,11 @@ import './ChefDetails.css'
 import SpinnerLoader from '../Shared/SpinnerLoader/SpinnerLoader';
 import ChefCard from '../Home/ChefCard/ChefCard';
 import { Container, Row } from 'react-bootstrap';
-/*=====================
-    Chef Section
- ====================== */
+
+/*===============================
+            Chef Section
+ ================================= */
+
 const ChefDetails = () => {
     const [loading, setLoading] = useState(true);
     const [chefDetails, setChefDetails] = useState([])

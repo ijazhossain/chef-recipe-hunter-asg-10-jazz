@@ -1,5 +1,10 @@
 import React from 'react';
 import './LoginBanner.css'
+
+/* ======================================
+            LoginBanner
+ ========================================*/
+
 const LoginBanner = () => {
     return (
         <div className='login-banner-container d-flex align-items-center justify-content-center'>

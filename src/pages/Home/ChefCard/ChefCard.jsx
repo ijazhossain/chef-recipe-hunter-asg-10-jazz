@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
  ======================*/
 const ChefCard = ({ details }) => {
     const navigate = useNavigate()
-    console.log(details);
+    // console.log(details);
     const { _id, chef_pic, chef_name, experience, recipe_quantity, likes } = details;
     return (
         <Col md={6} className=' p-0'>

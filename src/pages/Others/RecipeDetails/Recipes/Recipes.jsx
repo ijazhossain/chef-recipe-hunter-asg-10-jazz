@@ -6,9 +6,10 @@ import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-/* =============================
-    Single Recipe Details
-================================ */
+/* ====================================
+        Single Recipe Details
+====================================== */
+
 const Recipes = ({ info }) => {
     const [selected, setSelected] = useState(false);
     const { cooking_methods, ingredients, ratings, recipe_name } = info;

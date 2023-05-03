@@ -2,9 +2,11 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './Banner.css'
 import { useNavigate } from 'react-router-dom';
-/*====================
-        Banner
- ===================== */
+
+/*============================
+             Banner
+ ============================= */
+
 const Banner = () => {
     const navigate = useNavigate();
     return (
