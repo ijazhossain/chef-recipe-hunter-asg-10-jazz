@@ -15,10 +15,10 @@ const ChefInfo = ({ recipeInfo }) => {
             <Row>
                 <Col lg={6}>
                     <h1 className=' mb-4 fw-semibold'>{chef_name}</h1>
-                    <p className='mb-4 text-dark text-justify'>{description}</p>
-                    <p>Likes: {likes}</p>
-                    <p>Recipe Quantity: {recipe_quantity}</p>
-                    <p>Experiences: {experience
+                    <p className='mb-4 paragraph-color text-justify'>{description}</p>
+                    <p className='paragraph-color'>Likes: {likes}</p>
+                    <p className='paragraph-color'>Recipe Quantity: {recipe_quantity}</p>
+                    <p className='paragraph-color'>Experiences: {experience
                     }</p>
                 </Col>
                 <Col lg={6} className=''>

@@ -1,3 +1,22 @@
 body {
     font-family: 'Cormorant Garamond', serif;
+    /* background-color: #2c3e50; */
+    /* background-color: #34495e; */
+    /* background-color: #4b4b4b; */
+    /* background-color: #2c2c54; */
+    /* color: white !important; */
+}
+
+.heading-color {
+    color: #1A1919 !important;
+}
+
+.paragraph-color {
+    color: #757575;
+}
+
+.ym-fs-5 {
+    font-size: 18px;
+    line-height: 30px;
+    ;
 }

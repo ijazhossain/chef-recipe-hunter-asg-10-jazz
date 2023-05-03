@@ -3,6 +3,7 @@ import './ChefDetails.css'
 import SpinnerLoader from '../Shared/SpinnerLoader/SpinnerLoader';
 import ChefCard from '../Home/ChefCard/ChefCard';
 import { Container, Row } from 'react-bootstrap';
+import ChefDetailsHeader from '../Home/ChefDetailsHeader/ChefDetailsHeader';
 
 /*===============================
             Chef Section
@@ -27,7 +28,7 @@ const ChefDetails = () => {
     }
     return (
         <div className='my-3 py-3 my-lg-5 py-lg-5'>
-
+            <ChefDetailsHeader></ChefDetailsHeader>
             <Container >
                 <Row className='mx-auto gy-5 justify-content-between'>
                     {

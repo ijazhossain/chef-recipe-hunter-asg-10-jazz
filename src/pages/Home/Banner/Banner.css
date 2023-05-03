@@ -14,11 +14,13 @@
     background-repeat: no-repeat;
 }
 
-.carousel-container h1,
-.carousel-container h4 {
-    font-family: 'Cormorant Garamond', serif;
-    color: #c6a87d;
+.carousel-container h1 {
 
+    color: #c6a87d;
+}
+
+.carousel-container h4 {
+    color: #ffffff;
 }
 
 .height-control {
@@ -50,7 +52,7 @@
     }
 
     .carousel-container h4 {
-        font-size: 16px;
+        font-size: 20px;
         color: white;
     }
 

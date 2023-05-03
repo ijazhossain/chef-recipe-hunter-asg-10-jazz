@@ -21,7 +21,7 @@ const Recipes = ({ info }) => {
     }
     return (
         <div>
-            <h2 style={{ color: '#c5a47e' }} className='text-center fw-semibold'>{recipe_name}</h2>
+            <h2 className='text-center fw-semibold'>{recipe_name}</h2>
             <div className='d-flex align-items-center justify-content-center'>
                 <FontAwesomeIcon style={{ color: "#fdcc0d" }} icon={faStar}></FontAwesomeIcon>
                 <FontAwesomeIcon style={{ color: "#fdcc0d" }} icon={faStar}></FontAwesomeIcon>
