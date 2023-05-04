@@ -28,9 +28,9 @@ const Blogs = () => {
                 <section className='pb-5'>
                     <h1>Q3.What is the difference between nodeJS and expressJS?</h1>
                     <p className='mt-4'>
-                        In React, you can validate props using PropTypes, which is a typechecking library built into React. PropTypes provides a way to specify the type of each prop that a component expects, and it throws a warning in the console if a prop is of the wrong type.<br></br><br></br>
+                        Node.js is a runtime environment that allows developers to write server-side JavaScript code.<br></br><br></br>
 
-                        To use PropTypes, you'll need to import it from the 'prop-types' package. Then, you can define the propTypes for a component by adding a propTypes property to the component class or function.
+                        Express.js, on the other hand, is a web application framework built on top of Node.js. It provides a set of features for building web applications and APIs, such as routing, middleware, and HTTP utilities. Express.js is designed to be lightweight, flexible, and easy to use, making it a popular choice for building web applications.
 
                     </p>
                 </section>

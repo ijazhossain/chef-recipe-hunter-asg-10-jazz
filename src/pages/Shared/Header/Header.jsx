@@ -34,7 +34,7 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-lg-auto d-lg-flex align-items-lg-center w-50 justify-content-lg-around">
                         <ActiveLink to="/home">Home</ActiveLink>
-                        <ActiveLink to="/blog">Blog</ActiveLink>
+                        <ActiveLink to="/blog">Blogs</ActiveLink>
                         <ActiveLink to="/about">About</ActiveLink>
                         {user && <NavLink as={Link} to="">
                             <img title={user?.displayName} width="80px" height="80px" className="rounded-circle" src={`${user?.photoURL}`} alt="" />
