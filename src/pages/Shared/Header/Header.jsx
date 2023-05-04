@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Container } from 'react-bootstrap';
+import { Container, NavLink } from 'react-bootstrap';
 import logo from '../../../assets/images/logo.png'
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 /*=======================
-        Header 
+    Header Section
 =========================*/
 
 const Header = () => {
     const navigate = useNavigate()
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+            });
+    }
     return (
         <Navbar style={{ zIndex: '10' }} className='position-absolute top-0 w-100 py-5' bg="transparent" variant='dark' expand="lg">
             <Container>
@@ -25,7 +35,15 @@ const Header = () => {
                     <Nav className="ms-lg-auto d-lg-flex align-items-lg-center w-50 justify-content-lg-around">
                         <ActiveLink to="/home">Home</ActiveLink>
                         <ActiveLink to="/blog">Blog</ActiveLink>
-                        <button onClick={() => navigate('/login')} className='ym-btn border-0 px-5 rounded-3 fw-semibold text-white'>Login</button>
+                        {user && <NavLink as={Link} to="">
+                            <img title={user?.displayName} width="80px" height="80px" className="rounded-circle" src={`${user?.photoURL}`} alt="" />
+                        </NavLink>}
+                        {!user
+                            ?
+                            <button onClick={() => navigate('/login')} className='ym-btn border-0 px-5 rounded-3 fw-semibold text-white'>Login</button>
+                            :
+                            <button onClick={handleLogOut} className='ym-btn border-0 px-5 rounded-3 fw-semibold text-white'>Sign out</button>
+                        }
 
 
                     </Nav>

@@ -5,10 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Col, Container, Row } from 'react-bootstrap';
 
+/* =============================
+        Footer Section
+================================ */
+
 const Footer = () => {
     const date = new Date();
     let currentYear = date.getFullYear();
-    console.log(currentYear);
+    // console.log(currentYear);
     return (
         <div>
             <div className='footer-container text-center d-flex align-items-center justify-content-center'>

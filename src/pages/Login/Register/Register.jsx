@@ -6,17 +6,30 @@ import img from '../../../assets/images/login.jpg'
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { sendEmailVerification, updateProfile } from 'firebase/auth';
+import SpinnerLoader from '../../Shared/SpinnerLoader/SpinnerLoader';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 /* ==================================
         Registration Page
 ===================================== */
 
 const Register = () => {
-    const { user } = useContext(AuthContext)
-    console.log(user);
     const navigate = useNavigate();
     const emailRef = useRef('')
-    const [validated, setValidated] = useState(false)
+
+    const { createUser } = useContext(AuthContext)
+    // console.log(user);
+    const [validated, setValidated, loading] = useState(false)
+    const [error, setError] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+    if (loading) {
+        return <SpinnerLoader></SpinnerLoader>
+    }
     const handleFormSubmit = async event => {
         event.preventDefault();
         const form = event.currentTarget;
@@ -25,11 +38,54 @@ const Register = () => {
             // console.log('not validate')
         }
         setValidated(true);
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        const password = event.target.password.value;
-        const confirmPassword = event?.target?.confirmPassword?.value;
+
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.imgUrl.value;
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
         console.log(name, email, password, confirmPassword);
+        // form.reset()
+        setError('')
+        if (password !== confirmPassword) {
+            setError(`Passwords didn't match!`)
+            return;
+        }
+        if (password.length === 0) {
+            return;
+        }
+        if (password.length < 6) {
+            setError(`Password must be 6 characters or more!`)
+            return;
+        }
+        /*=================================================       Register with email and password 
+        ====================================================*/
+        createUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+
+                sendEmailVerification(loggedUser)
+                    .then(() => {
+                        toast('Email verification sent to ' + email)
+                    }).catch(error => {
+                        console.log(error);
+                        setError(error)
+                    })
+                updateProfile(loggedUser, {
+                    displayName: name,
+                    photoURL: photo
+                }).then(() => {
+                    toast('user updated')
+                }).catch(error => {
+                    console.log(error)
+                    setError(error)
+                })
+                navigate('/')
+            }).catch(error => {
+                console.log(error.message);
+                setError(error.message)
+            })
 
 
     }
@@ -82,15 +138,20 @@ const Register = () => {
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label className='text-start ps-2 w-100'>Password</Form.Label>
-                                <Form.Control name='password' type="password" placeholder="Password" required />
-
+                                <div className='position-relative'>
+                                    <Form.Control name='password' type={showPassword ? 'text' : 'password'} placeholder="Password" required />
+                                    <FontAwesomeIcon onClick={() => setShowPassword(!showPassword)} className='position-icon ym-primary' icon={faEye}></FontAwesomeIcon>
+                                </div>
                                 <Form.Control.Feedback className='text-start ps-2 w-100' type="invalid">
                                     Enter your password.
                                 </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
                                 <Form.Label className='text-start ps-2 w-100'>Confirm Password</Form.Label>
-                                <Form.Control name='confirmPassword' type="password" placeholder="Confirm Password" required />
+                                <div className='position-relative'>
+                                    <Form.Control name='confirmPassword' type={showConfirmPassword ? 'text' : 'password'} placeholder="Confirm Password" required />
+                                    <FontAwesomeIcon onClick={() => setShowConfirmPassword(!showConfirmPassword)} className='position-icon ym-primary' icon={faEye}></FontAwesomeIcon>
+                                </div>
                                 <Form.Control.Feedback className='text-start ps-2 w-100' type="invalid">
                                     Please enter your password again.
                                 </Form.Control.Feedback>
@@ -103,7 +164,7 @@ const Register = () => {
 
 
                             </Form.Group>
-                            <span className='text-danger'></span>{/* error */}
+                            <span className='text-danger ms-2 fw-semibold'>{error}</span>
                             <Button className='submit-btn fw-semibold  w-100 mt-2' variant="primary" type="submit">
                                 Register
                             </Button>
@@ -111,7 +172,7 @@ const Register = () => {
                     </Col>
                 </Row>
             </Container>
-
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
