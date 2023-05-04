@@ -8,6 +8,7 @@ import Register from "../pages/Login/Register/Register";
 import Blogs from "../pages/Others/Blogs/Blogs";
 import RecipeDetails from "../pages/Others/RecipeDetails/RecipeDetails/RecipeDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import NotFound from "../pages/Shared/NotFound/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <NotFound></NotFound>
     }
 ])
 export default router;
