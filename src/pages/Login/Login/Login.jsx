@@ -1,16 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import './Login.css'
 import RegisterBanner from '../RegisterBanner/RegisterBanner';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import img from '../../../assets/images/register.jpg'
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 /* =================================
             Login Page
 ==================================== */
 
 const Login = () => {
+    const { user } = useContext(AuthContext)
+    // console.log(user);
     const navigate = useNavigate();
     const emailRef = useRef('')
     const [validated, setValidated] = useState(false)
