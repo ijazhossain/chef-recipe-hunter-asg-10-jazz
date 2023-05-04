@@ -1,0 +1,20 @@
+.error-img {
+    width: 35%;
+}
+
+.back-btn {
+    height: 44px !important;
+    background-color: #c2a070 !important;
+}
+
+
+.back-btn:hover {
+    background-color: #000000 !important;
+}
+
+@media screen and (max-width: 500px) {
+    .error-img {
+        width: 50%;
+    }
+
+}

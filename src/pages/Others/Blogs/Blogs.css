@@ -1,0 +1,31 @@
+.blogs-banner-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../assets/images/video-bg.jpg');
+    min-height: 550px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.blogs-banner-container h1 {
+    color: #c5a47e;
+}
+
+.blogs-container {
+    background-image: url('../../../assets/images/chef-bg.jpg');
+}
+
+.download-btn {
+    background-color: #c2a070 !important;
+
+}
+
+.download-btn:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+@media screen and (max-width: 768px) {
+    .answer-container {
+        width: 90% !important;
+    }
+}

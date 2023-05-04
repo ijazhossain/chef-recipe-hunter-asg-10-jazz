@@ -6,7 +6,7 @@ import { Container, NavLink } from 'react-bootstrap';
 import logo from '../../../assets/images/logo.png'
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { Link, useNavigate } from 'react-router-dom';
-import Button from '../Button/Button';
+
 import { AuthContext } from '../../../providers/AuthProvider';
 
 /*=======================
@@ -41,7 +41,7 @@ const Header = () => {
                         </NavLink>}
                         {!user
                             ?
-                            <button onClick={() => navigate('/login')} className='ym-btn border-0 px-5 rounded-3 fw-semibold text-white'>Login</button>
+                            <button onClick={() => navigate('/login')} className='ym-btn auth-btn border-0 px-5 rounded-3 fw-semibold text-white'>Login</button>
                             :
                             <button onClick={handleLogOut} className='ym-btn border-0 px-5 rounded-3 fw-semibold text-white'>Sign out</button>
                         }
