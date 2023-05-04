@@ -19,7 +19,7 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 const Register = () => {
     const navigate = useNavigate();
-    const emailRef = useRef('')
+
 
     const { createUser } = useContext(AuthContext)
     // console.log(user);
@@ -58,7 +58,8 @@ const Register = () => {
             setError(`Password must be 6 characters or more!`)
             return;
         }
-        /*=================================================       Register with email and password 
+        /*=================================================       
+                Register with email and password 
         ====================================================*/
         createUser(email, password)
             .then(result => {
@@ -119,7 +120,7 @@ const Register = () => {
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label className='text-start ps-2 w-100'>Email address</Form.Label>
-                                <Form.Control ref={emailRef} name='email' type="email" placeholder="Enter email" required />
+                                <Form.Control name='email' type="email" placeholder="Enter email" required />
                                 <Form.Text className="text-muted w-100 text-start d-block ps-2">
                                     We'll never share your email with anyone else.
                                 </Form.Text>

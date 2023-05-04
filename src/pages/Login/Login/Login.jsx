@@ -4,20 +4,27 @@ import RegisterBanner from '../RegisterBanner/RegisterBanner';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import img from '../../../assets/images/register.jpg'
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import SpinnerLoader from '../../Shared/SpinnerLoader/SpinnerLoader';
 
 /* =================================
             Login Page
 ==================================== */
 
 const Login = () => {
-    const { user } = useContext(AuthContext)
-    // console.log(user);
-    const navigate = useNavigate();
-    const emailRef = useRef('')
+    const { signInUser, resetPassword, loading } = useContext(AuthContext)
     const [validated, setValidated] = useState(false)
-    const handleFormSubmit = async event => {
+    const [error, setError] = useState('')
+    // console.log(user);
+    const navigate = useNavigate()
+    const emailRef = useRef()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/';
+
+    const handleFormSubmit = event => {
         event.preventDefault();
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -26,18 +33,37 @@ const Login = () => {
         }
         setValidated(true);
 
-        const email = event.target.email.value;
-        const password = event.target.password.value;
-
-        console.log(name, email, password, confirmPassword);
-
+        const email = form.email.value;
+        const password = form.password.value;
+        setError('')
+        // console.log(email, password);
+        signInUser(email, password)
+            .then(result => {
+                const loggedUser = result.user
+                // console.log(loggedUser);
+                navigate(from, { replace: true })
+            }).catch(error => {
+                const errorMsg = error.message;
+                // console.log(errorMsg);
+                setError(errorMsg)
+            })
 
     }
-    const handleRegister = event => {
-        setRegistered(event.target.checked);
-    }
-    const resetPassword = () => {
 
+    const forgetPassword = (event) => {
+        const email = emailRef.current.value;
+        if (!email) {
+            toast('Please enter your Email')
+            return;
+        }
+        console.log(email);
+        resetPassword(email)
+            .then(() => {
+                toast('password reset email sent')
+            }).catch(error => {
+                console.log(error.message);
+
+            })
     }
     return (
         <div>
@@ -69,7 +95,7 @@ const Login = () => {
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label className='text-start ps-2 w-100'>Password</Form.Label>
                                 <Form.Control name='password' type="password" placeholder="Password" required />
-                                <button onClick={resetPassword} className='btn btn-link text-end w-100 mt-2 pb-0 login-link'>Forget Password</button>
+                                <button onClick={forgetPassword} className='btn btn-link text-end w-100 mt-2 pb-0 login-link'>Forget Password</button>
 
                                 <Form.Control.Feedback className='text-start ps-2 w-100' type="invalid">
                                     Enter your password.
@@ -86,7 +112,7 @@ const Login = () => {
 
 
                             </Form.Group>
-                            <span className='text-danger'></span>{/* error */}
+                            <span className='text-danger fw-semibold'>{error}</span>
                             <Button className='submit-btn  w-100 mt-2' variant="primary" type="submit">
                                 Login
                             </Button>
@@ -94,6 +120,7 @@ const Login = () => {
                     </Col>
                 </Row>
             </Container>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
