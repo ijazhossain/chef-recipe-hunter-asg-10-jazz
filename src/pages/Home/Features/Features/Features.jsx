@@ -14,7 +14,7 @@ const Features = () => {
         <div className='features-container my-3 py-3 my-lg-5 py-lg-5'>
             <Container className='features-container'>
                 <FeatureBanner></FeatureBanner>
-                <Row>
+                <Row className='pb-3 pb-lg-5'>
                     {
                         features.map(feature => <Feature
                             key={feature.id}

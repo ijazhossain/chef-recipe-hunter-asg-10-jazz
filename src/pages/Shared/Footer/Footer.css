@@ -1,0 +1,12 @@
+.footer-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.605), rgba(0, 0, 0, 0.756)), url('../../../assets/images/footer-bg.jpg');
+    min-height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.footer-bottom {
+    background-color: #131313;
+    color: white;
+}

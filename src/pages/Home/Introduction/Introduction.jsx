@@ -30,7 +30,7 @@ const Introduction = () => {
                         <button className='view-btn fw-semibold book-btn bg-transparent px-5 rounded-3 mt-4'>Discover More</button>
                     </div>
                 </Col>
-                <Col lg={5} className='pb-5 px-4 p-lg-5'>
+                <Col lg={5} className='pb-5 px-3 p-lg-5'>
                     <div className='position-relative badge-container'>
                         <img className="img-fluid" src={foodBg} alt="banner photo" />
                         <div className='text-center position-absolute  badge-container-inner rounded-3 pb-4 px-5 d-none d-lg-block'>
