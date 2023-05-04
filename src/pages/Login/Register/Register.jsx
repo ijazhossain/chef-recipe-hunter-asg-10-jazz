@@ -21,7 +21,7 @@ const Register = () => {
     const navigate = useNavigate();
 
 
-    const { createUser } = useContext(AuthContext)
+    const { createUser, setReload } = useContext(AuthContext)
     // console.log(user);
     const [validated, setValidated, loading] = useState(false)
     const [error, setError] = useState('')
@@ -77,6 +77,7 @@ const Register = () => {
                     displayName: name,
                     photoURL: photo
                 }).then(() => {
+                    setReload(Date.now())
                     toast('user updated')
                 }).catch(error => {
                     console.log(error)
