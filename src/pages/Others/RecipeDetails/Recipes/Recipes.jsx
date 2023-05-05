@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { addToDb } from '../../../../utilities/fakeDB';
 
 /* ====================================
         Single Recipe Details
@@ -12,12 +13,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Recipes = ({ info }) => {
     const [selected, setSelected] = useState(false);
-    const { cooking_methods, ingredients, ratings, recipe_name } = info;
-
+    const { _id, cooking_methods, ingredients, ratings, recipe_name } = info;
+    // console.log(info);
     // console.log(cooking_methods, ingredients, ratings, recipe_name);
     const handleFavorite = () => {
         setSelected(true)
-        toast(recipe_name + " recipe is your favorite.")
+        toast(recipe_name + " recipe added to favorite.")
+        // console.log(_id, recipe_name);
+        addToDb(_id, recipe_name)
     }
     return (
         <div>
@@ -59,7 +62,7 @@ const Recipes = ({ info }) => {
                 </Col>
             </Row>
             <button onClick={() => handleFavorite()}
-                disabled={selected} className={`ym-btn border-0 px-5 rounded-3 fw-semibold text-white d-block mt-5 w-lg-50 mx-auto ${selected && "text-white bg-black"}`}>Add to favorite</button>
+                disabled={selected} className={`ym-btn border-0 px-5 rounded-3 fw-semibold text-white d-block mt-5 w-lg-50 mx-auto ${selected && "select-btn"}`}>Add to favorite</button>
             <hr className='mt-5'></hr>
             <ToastContainer />
         </div>

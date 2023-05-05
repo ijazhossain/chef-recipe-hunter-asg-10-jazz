@@ -9,6 +9,11 @@
     font-size: 18px;
 }
 
+.select-btn {
+    background-color: black !important;
+    color: white !important;
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .card-style {
         padding-top: 16px;

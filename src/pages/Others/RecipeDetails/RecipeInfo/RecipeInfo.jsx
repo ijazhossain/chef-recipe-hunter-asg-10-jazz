@@ -16,7 +16,7 @@ const RecipeInfo = ({ recipeInfo }) => {
             <Row className='gy-3 gy-lg-5 container mx-auto'>
                 {
                     recipe_info.map(info => <Recipes
-                        key={info.id}
+                        key={info._id}
                         info={info}
                     ></Recipes>)
                 }
