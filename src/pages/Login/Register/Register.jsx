@@ -161,7 +161,7 @@ const Register = () => {
                             <Form.Group className="text-left mb-3 mt-2" controlId="formBasicBox">
                                 <div className='w-100 d-flex align-items-center justify-content-start'>
                                     <p className="text-left mb-0 ps-2">Already have an account?</p>
-                                    <button onClick={() => navigate('/login')} className='btn btn-link text-decoration-none  fw-semibold login-link'>Login</button>
+                                    <button onClick={() => navigate('/login')} className='btn btn-link text-decoration-none  login-link'>Login</button>
                                 </div>
 
 

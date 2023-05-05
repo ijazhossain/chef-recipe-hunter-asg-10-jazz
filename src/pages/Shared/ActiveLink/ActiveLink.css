@@ -1,6 +1,6 @@
 .active-link {
     color: #c5a47e;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .active-link:hover {
@@ -8,7 +8,7 @@
 }
 
 .inactive {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .inactive:hover {

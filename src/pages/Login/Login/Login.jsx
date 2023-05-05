@@ -106,14 +106,14 @@ const Login = () => {
                                 <div className='w-100 d-flex align-items-center justify-content-start'>
 
                                     <p className="text-left mb-0 ps-2">New to Yummye?</p>
-                                    <button onClick={() => navigate('/register')} className='btn btn-link text-decoration-none  fw-semibold login-link'>Register</button>
+                                    <button onClick={() => navigate('/register')} className='btn btn-link text-decoration-none   login-link'>Register</button>
 
                                 </div>
 
 
                             </Form.Group>
                             <span className='text-danger fw-semibold'>{error}</span>
-                            <Button className='submit-btn  w-100 mt-2' variant="primary" type="submit">
+                            <Button className='submit-btn  w-100 mt-2 fw-semibold' variant="primary" type="submit">
                                 Login
                             </Button>
                         </Form>

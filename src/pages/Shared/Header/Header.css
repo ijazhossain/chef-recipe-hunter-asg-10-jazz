@@ -1,10 +1,39 @@
 .auth-btn {
-    height: 44px !important;
+    height: 45px !important;
     background-color: transparent !important;
     border: 1px solid #c2a070 !important;
-
+    font-size: 18px !important;
 }
+
+
 
 .auth-btn:hover {
     background-color: #c2a070 !important;
+}
+
+@media screen and (max-width: 991px) {
+
+
+    .navbar-collapse {
+        background-color: rgb(128, 128, 128);
+        text-align: center;
+        padding: 20px 0px;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+
+    #basic-navbar-nav a {
+        border-bottom: 1px solid #c2a070;
+        padding-top: 20px;
+    }
+
+    .control-width {
+        margin: 0 auto;
+    }
+
+    .auth-res-btn {
+        background-color: black !important;
+        margin-top: 20px;
+    }
+
 }

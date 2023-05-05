@@ -36,7 +36,12 @@
 .book-btn {
     height: 57px;
     border: 1px solid #c6a87d;
-    font-size: 17px;
+    font-size: 20px;
+}
+
+.book-btn:hover {
+    background-color: #c6a87d !important;
+
 }
 
 @media only screen and (max-width:600px) {
