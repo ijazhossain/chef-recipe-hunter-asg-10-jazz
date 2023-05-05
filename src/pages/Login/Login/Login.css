@@ -2,3 +2,7 @@
     color: rgb(194, 160, 112);
     font-weight: 400;
 }
+
+.login-link:hover {
+    background-color: transparent !important;
+}

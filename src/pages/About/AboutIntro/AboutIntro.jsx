@@ -11,16 +11,16 @@ const AboutIntro = () => {
     return (
 
         <Container className='my-2 py-3 my-lg-5 py-lg-5 '>
-            <div className=' badge-container text-center'>
+            <div className=' badge-container text-center '>
                 <img className="about-banner" src={foodBg} alt="banner photo" />
 
             </div>
             <Row className='flex-column-reverse flex-lg-row align-items-center'>
 
                 <Col lg={12} className='px-4'>
-                    <p className='fs-5  my-4 text-center'>
+                    <p className='fs-5 mt-4 mt-lg-5 pt-lg-5 mb-4 text-center'>
                         <img className='me-2 ' src={img} alt="circle" />
-                        <span style={{ color: "#c5a47e" }} className='fw-semibold'>Ordinary American Taste with Special Recipe</span>
+                        <span style={{ color: "#c5a47e" }} className='fw-semibold'>What You Need to Know</span>
                     </p>
                     <h1 className='intro-title heading-color display-2 fw-semibold mb-3 mb-lg-5 mt-0 text-center'>The Restaurant has been Open Since 2005
                     </h1>
@@ -45,11 +45,8 @@ const AboutIntro = () => {
 
 
                 </Col>
-
-
-
             </Row>
-            <Row className='my-4'>
+            <Row className='py-4 py-lg-0 mb-4 my-lg-4'>
                 <Col>
                     <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                         {({ isVisible }) => (

@@ -36,7 +36,7 @@ const Header = () => {
                         <ActiveLink to="/home">Home</ActiveLink>
                         <ActiveLink to="/blog">Blogs</ActiveLink>
                         <ActiveLink to="/about">About</ActiveLink>
-                        {user && <NavLink as={Link} to="">
+                        {user && <NavLink as={Link} to="/userDetails">
                             <img title={user?.displayName} width="80px" height="80px" className="rounded-circle" src={`${user?.photoURL}`} alt="" />
                         </NavLink>}
                         {!user

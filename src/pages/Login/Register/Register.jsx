@@ -19,8 +19,6 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 const Register = () => {
     const navigate = useNavigate();
-
-
     const { createUser, setReload } = useContext(AuthContext)
     // console.log(user);
     const [validated, setValidated, loading] = useState(false)

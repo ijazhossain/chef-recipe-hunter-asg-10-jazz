@@ -1,0 +1,11 @@
+.about-banner-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.605)), url('../../../assets/images/about.jpg');
+    min-height: 550px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.about-banner-container h1 {
+    color: #c5a47e;
+}

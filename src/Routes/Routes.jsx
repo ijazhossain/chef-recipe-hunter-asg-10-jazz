@@ -10,6 +10,7 @@ import RecipeDetails from "../pages/Others/RecipeDetails/RecipeDetails/RecipeDet
 import PrivateRoutes from "./PrivateRoutes";
 import NotFound from "../pages/Shared/NotFound/NotFound";
 import About from "../pages/About/About/About";
+import UserInfo from "../pages/Login/UserInfo/UserInfo";
 
 const router = createBrowserRouter([
     {
@@ -83,6 +84,16 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            }
+        ]
+    },
+    {
+        path: 'userDetails',
+        element: <LoginLayout></LoginLayout>,
+        children: [
+            {
+                path: '/userDetails',
+                element: <UserInfo></UserInfo>
             }
         ]
     },

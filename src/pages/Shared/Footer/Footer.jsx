@@ -32,7 +32,7 @@ const Footer = () => {
                 </Container>
             </div>
             <div className='footer-bottom'>
-                <p className='font-monospace text-center py-4 mb-0 font'>Copyright &copy; Yummye {currentYear} . All rights reserved.</p>
+                <p className='px-3 px-0 font-monospace text-center py-4 mb-0 font'>Copyright &copy; Yummye {currentYear} . All rights reserved.</p>
             </div>
         </div>
     );

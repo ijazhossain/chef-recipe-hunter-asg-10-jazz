@@ -35,6 +35,8 @@ const Login = () => {
 
         const email = form.email.value;
         const password = form.password.value;
+
+
         setError('')
         // console.log(email, password);
         signInUser(email, password)
@@ -56,12 +58,13 @@ const Login = () => {
             toast('Please enter your Email')
             return;
         }
-        console.log(email);
+        // console.log(email);
         resetPassword(email)
             .then(() => {
                 toast('password reset email sent')
             }).catch(error => {
-                console.log(error.message);
+                // console.log(error.message);
+                setError(error?.message)
 
             })
     }
