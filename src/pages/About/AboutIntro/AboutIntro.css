@@ -1,0 +1,13 @@
+.about-banner {
+    width: 50%;
+}
+
+.ym-text-justify {
+    text-align: justify !important;
+}
+
+@media screen and (max-width: 768px) {
+    .about-banner {
+        width: 85%;
+    }
+}

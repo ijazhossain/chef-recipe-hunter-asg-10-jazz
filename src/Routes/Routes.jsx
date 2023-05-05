@@ -9,6 +9,7 @@ import Blogs from "../pages/Others/Blogs/Blogs";
 import RecipeDetails from "../pages/Others/RecipeDetails/RecipeDetails/RecipeDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import NotFound from "../pages/Shared/NotFound/NotFound";
+import About from "../pages/About/About/About";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,16 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blogs></Blogs>
+            }
+        ]
+    },
+    {
+        path: '/about',
+        element: <Main></Main>,
+        children: [
+            {
+                path: '/about',
+                element: <About></About>
             }
         ]
     },
