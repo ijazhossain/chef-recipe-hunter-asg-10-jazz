@@ -1,8 +1,8 @@
 .badge-container-inner {
     background-color: #362b27ca !important;
     color: white;
-    left: -150px;
-    top: 100px;
+    left: -105px;
+    top: 140px;
 }
 
 @media screen and (max-width: 768px) {

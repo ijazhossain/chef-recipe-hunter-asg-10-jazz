@@ -1,11 +1,37 @@
-.about-banner-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.605)), url('../../../assets/images/about.jpg');
+.user-banner-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.87)), url('../../../assets/images/user-banner.jpg');
     min-height: 550px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
 
-.about-banner-container h1 {
+.user-banner-container h1 {
     color: #c5a47e;
+}
+
+.edit-profile {
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    /* .ym-user-info {
+        text-align: center;
+    } */
+
+    .user-title-ym {
+        margin-top: 30px;
+        font-size: 25px;
+        ;
+    }
+
+    .edit-profile {
+        width: fit-content;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:992px) {
+    .ym-user-detail-container {
+        padding-left: 150px;
+    }
 }

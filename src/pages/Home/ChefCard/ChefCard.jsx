@@ -1,10 +1,10 @@
 import React from 'react';
 import LazyLoad from 'react-lazy-load';
-import './ChefCard.css'
 import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import './ChefCard.css'
 
 /*=====================
     Single Chef Card 

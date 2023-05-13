@@ -11,8 +11,8 @@ const ChefInfo = ({ recipeInfo }) => {
     const { chef_pic, chef_name, description, likes, recipe_quantity, experience
     } = recipeInfo;
     return (
-        <div className='chef-information container mx-auto my-5 py-5 px-3 px-lg-0'>
-            <Row>
+        <div className='chef-information container mx-auto my-lg-5 py-lg-5 py-5 px-3 px-lg-0'>
+            <Row className='gy-4 gy-lg-0'>
                 <Col lg={6}>
                     <h1 className='heading-color mb-4 fw-semibold'>{chef_name}</h1>
                     <p className='mb-4 paragraph-color text-justify'>{description}</p>

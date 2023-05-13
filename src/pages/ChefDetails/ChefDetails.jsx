@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './ChefDetails.css'
 import SpinnerLoader from '../Shared/SpinnerLoader/SpinnerLoader';
 import ChefCard from '../Home/ChefCard/ChefCard';
 import { Container, Row } from 'react-bootstrap';
 import ChefDetailsHeader from '../Home/ChefDetailsHeader/ChefDetailsHeader';
+import './ChefDetails.css'
 
 /*===============================
             Chef Section

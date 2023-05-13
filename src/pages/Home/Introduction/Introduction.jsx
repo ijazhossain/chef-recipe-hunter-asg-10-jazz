@@ -3,12 +3,14 @@ import { Col, Container, Row } from 'react-bootstrap';
 import img from '../../../assets/images/circle-left.png'
 import foodBg from '../../../assets/images/food-1.jpg'
 import "./Introduction.css"
+import { useNavigate } from 'react-router-dom';
 
 /* =====================================
     Introduction HomePage Section
 ======================================= */
 
 const Introduction = () => {
+    const navigate = useNavigate()
     return (
         <Container className='my-2 py-3 -my-lg-5 py-lg-5 '>
             <Row className='flex-column-reverse flex-lg-row align-items-center'>
@@ -17,7 +19,7 @@ const Introduction = () => {
                         <img className='me-2 ' src={img} alt="circle" />
                         <span style={{ color: "#c5a47e" }} className='fw-semibold'>Ordinary American Taste with Special Recipe</span>
                     </p>
-                    <h1 className='intro-title heading-color display-2 fw-semibold mb-3 mb-lg-5 mt-0'>We Are Experienced Restaurant.
+                    <h1 className=' heading-color display-1 fw-semibold mb-3 mb-lg-5 mt-0'>We Are Experienced Restaurant.
                     </h1>
                     <p className="paragraph-color ym-fs-5">
 
@@ -27,7 +29,7 @@ const Introduction = () => {
                     </p>
 
                     <div className='go-mid'>
-                        <button className='view-btn fw-semibold book-btn bg-transparent px-5 rounded-3 mt-4'>Discover More</button>
+                        <button onClick={() => navigate('/about')} className='view-btn fw-semibold book-btn bg-transparent px-5 rounded-3 mt-4'>Discover More</button>
                     </div>
                 </Col>
                 <Col lg={5} className='pb-5 px-3 p-lg-5'>

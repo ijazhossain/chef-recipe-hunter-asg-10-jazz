@@ -1,11 +1,14 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase/firebase.config';
+import { ToastContainer } from 'react-toastify';
+
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -13,6 +16,7 @@ const AuthProvider = ({ children }) => {
 
     /* Create user Email Password */
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     /* user login */
@@ -38,6 +42,12 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
+    /* facebook sign in */
+    const facebookSignIn = () => {
+        setLoading(true)
+        return signInWithPopup(auth, facebookProvider)
+    }
+
     const authInfo = {
         user,
         createUser,
@@ -47,12 +57,13 @@ const AuthProvider = ({ children }) => {
         resetPassword,
         googleSignIn,
         githubSignIn,
-        setReload
+        setReload,
+        facebookSignIn,
     }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log(currentUser);
+            // console.log(currentUser);
             setUser(currentUser)
             setLoading(false)
         })
@@ -63,6 +74,7 @@ const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
+            <ToastContainer></ToastContainer>
         </AuthContext.Provider>
     );
 };

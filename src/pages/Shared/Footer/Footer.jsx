@@ -4,6 +4,7 @@ import logo from '../../../assets/images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 /* =============================
         Footer Section
@@ -13,13 +14,16 @@ const Footer = () => {
     const date = new Date();
     let currentYear = date.getFullYear();
     // console.log(currentYear);
+
     return (
         <div>
             <div className='footer-container text-center d-flex align-items-center justify-content-center'>
                 <Container>
                     <Row className='footer-row'>
                         <Col xs={11} lg={8} className=' mx-auto pt-5 pt-lg-0'>
-                            <img width="150px" src={logo} alt="" />
+                            <Link to="/">
+                                <img width="150px" src={logo} alt="" />
+                            </Link>
                             <div className='text-white mt-5 mb-4 '>
                                 <FontAwesomeIcon className='fs-4 me-4 ym-primary' icon={faFacebook}></FontAwesomeIcon>
                                 <FontAwesomeIcon className='fs-4 me-4 ym-primary' icon={faTwitter}></FontAwesomeIcon>

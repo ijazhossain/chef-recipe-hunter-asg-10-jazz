@@ -1,5 +1,5 @@
 .about-banner {
-    width: 60%;
+    width: 90%;
 }
 
 .ym-text-justify {
@@ -8,6 +8,6 @@
 
 @media screen and (max-width: 768px) {
     .about-banner {
-        width: 90%;
+        width: 100%;
     }
 }

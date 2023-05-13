@@ -3,7 +3,9 @@ import { Button, Card, Col } from 'react-bootstrap';
 import './Feature.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 const Feature = ({ feature }) => {
+    const navigate = useNavigate()
     const { id, name, description, img_link } = feature;
     return (
         <Col md={6} lg={4} className='pb-2 pb-lg-4'>

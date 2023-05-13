@@ -1,8 +1,21 @@
 .login-link {
     color: rgb(194, 160, 112);
     font-weight: 400;
+
 }
 
 .login-link:hover {
     background-color: transparent !important;
+}
+
+.conformation-from {
+    width: 80%;
+}
+
+@media screen and (max-width: 991px) {
+
+
+    .btn-link-up-div {
+        padding-left: 0px;
+    }
 }

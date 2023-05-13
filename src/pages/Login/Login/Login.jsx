@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import './Login.css'
 import RegisterBanner from '../RegisterBanner/RegisterBanner';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
@@ -8,19 +8,22 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SpinnerLoader from '../../Shared/SpinnerLoader/SpinnerLoader';
+
 
 /* =================================
             Login Page
 ==================================== */
 
 const Login = () => {
-    const { signInUser, resetPassword, loading } = useContext(AuthContext)
+    const { signInUser, resetPassword } = useContext(AuthContext)
     const [validated, setValidated] = useState(false)
     const [error, setError] = useState('')
+    const [formData, setFormData] = useState({});
+
     // console.log(user);
     const navigate = useNavigate()
-    const emailRef = useRef()
+    const emailRef = useRef(null)
+    const passwordRef = useRef(null)
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/';
 
@@ -33,11 +36,15 @@ const Login = () => {
         }
         setValidated(true);
 
-        const email = form.email.value;
-        const password = form.password.value;
-
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        // console.log(email, password);
 
         setError('')
+        if (!email || !password) {
+            return;
+        }
+
         // console.log(email, password);
         signInUser(email, password)
             .then(result => {
@@ -48,6 +55,7 @@ const Login = () => {
                 const errorMsg = error.message;
                 // console.log(errorMsg);
                 setError(errorMsg)
+                return;
             })
 
     }
@@ -68,6 +76,17 @@ const Login = () => {
 
             })
     }
+    const handleKeyDown = (event) => {
+        if (event.keyCode === 13) { // Enter key code is 13
+            event.preventDefault();
+            event.stopPropagation();
+            handleFormSubmit(event);
+        }
+    }
+    useEffect(() => {
+        emailRef.current.focus();
+        passwordRef.current.focus();
+    }, []);
     return (
         <div>
             <RegisterBanner></RegisterBanner>
@@ -76,16 +95,16 @@ const Login = () => {
                     <Col lg={6} className='d-lg-flex flex-column align-items-end  d-none '>
                         <img className="" style={{ width: "70%" }} src={img} alt="banner img" />
                     </Col>
-                    <Col lg={6} className=''>
+                    <Col lg={6} className='ps-lg-5'>
                         <SocialLogin></SocialLogin>
 
-                        <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='social-container mx-md-auto  mt-3'>
+                        <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='social-container mt-3'>
 
 
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label className='text-start ps-2 w-100'>Email address</Form.Label>
-                                <Form.Control ref={emailRef} name='email' type="email" placeholder="Enter email" required />
+                                <Form.Control onKeyDown={handleKeyDown} onChange={(event) => setFormData({ ...formData, name: event.target.value })} ref={emailRef} name='email' type="email" placeholder="Enter email" required />
                                 <Form.Text className="text-muted w-100 text-start d-block ps-2">
                                     We'll never share your email with anyone else.
                                 </Form.Text>
@@ -97,19 +116,16 @@ const Login = () => {
 
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label className='text-start ps-2 w-100'>Password</Form.Label>
-                                <Form.Control name='password' type="password" placeholder="Password" required />
-                                <button onClick={forgetPassword} className='btn btn-link text-end w-100 mt-2 pb-0 login-link'>Forget Password</button>
-
+                                <Form.Control onKeyDown={handleKeyDown} onChange={(event) => setFormData({ ...formData, name: event.target.value })} ref={passwordRef} name='password' type="password" placeholder="Password" required />
                                 <Form.Control.Feedback className='text-start ps-2 w-100' type="invalid">
                                     Enter your password.
                                 </Form.Control.Feedback>
                             </Form.Group>
 
+
                             <Form.Group className="text-left mb-3 mt-2" controlId="formBasicBox">
                                 <div className='w-100 d-flex align-items-center justify-content-start'>
 
-                                    <p className="text-left mb-0 ps-2">New to Yummye?</p>
-                                    <button onClick={() => navigate('/register')} className='btn btn-link text-decoration-none   login-link'>Register</button>
 
                                 </div>
 
@@ -120,6 +136,16 @@ const Login = () => {
                                 Login
                             </Button>
                         </Form>
+
+                        <div className='d-flex align-items-lg-center  align-items-start justify-content-lg-between conformation-from flex-column flex-lg-row '>
+                            <div className="d-flex  align-items-center justify-content-start text-left mb-0 ps-2 mt-2">
+                                <p className='mb-0 btn-link-up-div'>New to Yummye?</p>
+                                <button onClick={() => navigate('/register')} className='fw-semibold  btn btn-link text-decoration-none   login-link'>Register</button>
+                            </div>
+                            <button onClick={forgetPassword} className='btn btn-link text-end   pb-0 login-link'>Forget Password</button>
+                        </div>
+
+
                     </Col>
                 </Row>
             </Container>

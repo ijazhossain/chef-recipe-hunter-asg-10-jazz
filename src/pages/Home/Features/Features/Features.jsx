@@ -12,7 +12,7 @@ const Features = () => {
     ]
     return (
         <div className='features-container my-3 py-3 my-lg-5 py-lg-5'>
-            <Container className='features-container'>
+            <Container className='features-container py-lg-4'>
                 <FeatureBanner></FeatureBanner>
                 <Row className='pb-3 pb-lg-5'>
                     {

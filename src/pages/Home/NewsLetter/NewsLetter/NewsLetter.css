@@ -1,0 +1,49 @@
+.newsletter-container {
+    background-color: #f7f5f1;
+    background-image: url('../../../../assets/images/icon-1-bg.png');
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.news-letter-form input {
+    height: 56px;
+    width: 550px;
+    background-color: white !important;
+
+}
+
+.news-letter-form input:focus-visible {
+    outline: 0px !important;
+
+}
+
+.news-letter-form button {
+    height: 56px !important;
+}
+
+@media screen and (max-width:768px) {
+    .newsletter-container {
+        padding-bottom: 0px !important;
+
+    }
+
+    .news-letter-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-letter-form input {
+        width: 90%;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        height: 50px;
+
+    }
+
+    .news-letter-form button {
+        width: 90%;
+        border-radius: 8px;
+        height: 50px;
+    }
+}
